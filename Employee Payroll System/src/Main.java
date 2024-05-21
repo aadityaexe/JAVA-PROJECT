@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 abstract class Employee {
 
@@ -84,7 +85,6 @@ class PayrollSystem {
         if (employeeToRemove != null) {
             employeeList.remove(employeeToRemove);
         }
-
     }
 
     public void displayEmployee() {
@@ -97,6 +97,57 @@ class PayrollSystem {
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
+        PayrollSystem payrollSystem = new PayrollSystem();
+        int id;
+        String name;
+        double salary;
+
+        Scanner input = new Scanner(System.in);
+
+        while (true) {
+
+            System.out.println("enter choise");
+            int ch = input.nextInt();
+            switch (ch) {
+                case 1:
+                    System.out.println("Enter id");
+                    id = input.nextInt();
+                    System.out.println("Enter name");
+                    name = input.nextLine();
+                    name = input.nextLine();
+                    System.out.println("Enter name salary");
+                    salary = input.nextInt();
+
+                    fullTimeEmployee emp1 = new fullTimeEmployee(name, id, salary);
+                    payrollSystem.addEmployee(emp1);
+
+                    break;
+
+                case 2:
+                    System.out.println("Enter id");
+                    id = input.nextInt();
+                    System.out.println("Enter name");
+                    name = input.nextLine();
+                    name = input.nextLine();
+                    System.out.println("Enter  hours work");
+                    int hoursWork = input.nextInt();
+                    System.out.println("Enter hourly rate");
+                    int hourlyRate = input.nextInt();
+
+                    partTimeEmployee emp2 = new partTimeEmployee(name, id, hoursWork, hourlyRate);
+                    payrollSystem.addEmployee(emp2);
+
+                    break;
+
+                case 3:
+                    payrollSystem.displayEmployee();
+                    break;
+
+                default:
+                    break;
+            }
+
+        }
+
     }
 }
