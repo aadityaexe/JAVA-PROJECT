@@ -140,9 +140,13 @@ public class Main {
                     break;
 
                 case 3:
-                    payrollSystem.displayEmployee();
+                    payrollSystem.removeEmployee(2);
                     break;
 
+                case 4:
+
+                    payrollSystem.displayEmployee();
+                    break;
                 default:
                     break;
             }
@@ -151,3 +155,8 @@ public class Main {
 
     }
 }
+
+// System.out.println(" removing employee");
+// payrollSystem.removeEmployee(2);
+// System.out.println("remaining employee");
+// payrollSystem.displayEmployee();
