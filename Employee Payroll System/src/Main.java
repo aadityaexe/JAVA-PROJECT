@@ -105,15 +105,19 @@ public class Main {
         Scanner input = new Scanner(System.in);
 
         while (true) {
-
-            System.out.println("enter choise");
+            System.out.println("Menu:");
+            System.out.println("1. Add Full-Time Employee");
+            System.out.println("2. Add Part-Time Employee");
+            System.out.println("3. Remove Employee");
+            System.out.println("4. Display Employees");
+            System.out.print("Enter your choice: ");
             int ch = input.nextInt();
             switch (ch) {
                 case 1:
                     System.out.println("Enter id");
                     id = input.nextInt();
+                    input.nextLine();
                     System.out.println("Enter name");
-                    name = input.nextLine();
                     name = input.nextLine();
                     System.out.println("Enter name salary");
                     salary = input.nextInt();
@@ -126,8 +130,8 @@ public class Main {
                 case 2:
                     System.out.println("Enter id");
                     id = input.nextInt();
+                    input.nextLine();
                     System.out.println("Enter name");
-                    name = input.nextLine();
                     name = input.nextLine();
                     System.out.println("Enter  hours work");
                     int hoursWork = input.nextInt();
@@ -140,11 +144,12 @@ public class Main {
                     break;
 
                 case 3:
-                    payrollSystem.removeEmployee(2);
+                    System.out.print("Enter employee ID to remove: ");
+                    int employeeIdToRemove = input.nextInt();
+                    payrollSystem.removeEmployee(employeeIdToRemove);
                     break;
 
                 case 4:
-
                     payrollSystem.displayEmployee();
                     break;
                 default:
@@ -155,8 +160,3 @@ public class Main {
 
     }
 }
-
-// System.out.println(" removing employee");
-// payrollSystem.removeEmployee(2);
-// System.out.println("remaining employee");
-// payrollSystem.displayEmployee();
